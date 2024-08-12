@@ -17,7 +17,7 @@ class StageToRedshiftOperator(BaseOperator):
     """
 
     drop_table= """
-        DROP TABLE IF EXISTS {}
+        TRUNCATE TABLE IF EXISTS {}
         """
 
     @apply_defaults
