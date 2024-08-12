@@ -24,7 +24,7 @@ class LoadDimensionOperator(BaseOperator):
         self.log.info('LoadDimensionOperator not implemented yet')
 
         redshift_hook=PostgresHook(self.redshift_conn_id)
-        redshift_hook.run(f"DROP TABLE IF EXISTS {self.table}")
+        redshift_hook.run(f"TRUNCATE TABLE IF EXISTS {self.table}")
         
         redshift_hook.run(self.create_sql)
 
